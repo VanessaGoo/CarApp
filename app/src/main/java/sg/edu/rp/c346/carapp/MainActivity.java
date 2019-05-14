@@ -45,12 +45,13 @@ public class MainActivity extends AppCompatActivity {
                 DBHelper db = new DBHelper(MainActivity.this);
 
                 // Insert a task
-                ArrayList<String> data = db.getTaskContent();
+                ArrayList<Car> data = db.getTaskContent();
                 db.close();
 
                 String txt = "";
                 for (int i = 0; i < data.size(); i++) {
-                    txt += data.get(i) + "\n";
+                    txt += data.get(i).getBrand() + ", " + data.get(i).getLitre() + "\n";
+
                 }
                 tvInfo.setText(txt);
                 db.close();
